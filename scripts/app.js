@@ -37,12 +37,68 @@ function gatherKeyValuesFromJSON() {
                     }
 
                     // console.log(legInfoObj);
-                    return legInfoObj
+                    // return legInfoObj
 
                 });
             }
+
+            // console.log(legInfoObj);
+            return legInfoObj
         })
+
+        .then (function(legInfoObj){
+            initMap(legInfoObj);
+
+        })
+
+
+
+
 }
 
 gatherKeyValuesFromJSON();
+
+
+
+/* in progress
+
+// Map section //
+
+// First version with one point on the map
+// Initialize and add the map
+function initMap(addressesObj) {
+
+    // console.log("3");
+    // console.log(typeof(addressesObj))
+
+    
+
+    // The location of Uluru
+    // var uluru = {lat: -25.344, lng: 131.036};
+    // var uluru = {lat: 29.7531944, lng: -95.3388006};
+    var locations = {addressesObj.startAddress, addressesObj.}
+
+    // The map, centered at Uluru
+    var map = new google.maps.Map(document.getElementById('map'), {zoom: 2, center: uluru});
+
+    // The marker, positioned at Uluru
+    var marker = new google.maps.Marker({position: uluru, map: map});
+}
+
+***/
+
+/*
+// Loop through the results array and place a marker for each
+// set of coordinates.
+window.eqfeed_callback = function(results) {
+  for (var i = 0; i < results.features.length; i++) {
+    var coords = results.features[i].geometry.coordinates;
+    var latLng = new google.maps.LatLng(coords[1],coords[0]);
+    var marker = new google.maps.Marker({
+      position: latLng,
+      map: map
+    });
+  }
+}
+*/
 
