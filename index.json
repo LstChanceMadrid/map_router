@@ -1,39 +1,37 @@
 [
-    {'bounds': {'northeast': {'lat': 29.7553068, 'lng': -95.3348395
-            }, 'southwest': {'lat': 29.7521688, 'lng': -95.3388006
+    {"bounds": {"northeast": {"lat": 29.7553068, "lng": -95.3348395
+            }, "southwest": {"lat": 29.7521688, "lng": -95.3388006
             }
-        }, 'copyrights': 'Map data ©2018 Google', 'legs': [
-            {'distance': {'text': '0.4 mi', 'value': 674
-                }, 'duration': {'text': '2 mins', 'value': 130
-                }, 'end_address': '3415 Navigation Blvd, Houston, TX 77003, USA', 'end_location': {'lat': 29.7553068, 'lng': -95.33571289999999
-                }, 'start_address': '3302 Canal St, Houston, TX 77003, USA', 'start_location': {'lat': 29.7531944, 'lng': -95.3388006
-                }, 'steps': [
-                    {'distance': {'text': '0.1 mi', 'value': 203
-                        }, 'duration': {'text': '1 min', 'value': 33
-                        }, 'end_location': {'lat': 29.7521688, 'lng': -95.33706169999999
-                        }, 'html_instructions': 'Head <b>southeast</b> on <b>Canal St</b> toward <b>Nolan St</b>', 'polyline': {'points': 'mdrtDnz{dQl@kAv@cBdBkD'
-                            }, 'start_location': {'lat': 29.7531944, 'lng': -95.3388006
-                            }, 'travel_mode': 'DRIVING'
+        }, "copyrights": "Map data ©2018 Google", "legs": [
+            {"distance": {"text": "0.4 mi", "value": 674
+                }, "duration": {"text": "2 mins", "value": 130
+                }, "end_address": "3415 Navigation Blvd, Houston, TX 77003, USA", "end_location": {"lat": 29.7553068, "lng": -95.33571289999999
+                }, "start_address": "3302 Canal St, Houston, TX 77003, USA", "start_location": {"lat": 29.7531944, "lng": -95.3388006
+                }, "steps": [
+                    {"distance": {"text": "0.1 mi", "value": 203
+                        }, "duration": {"text": "1 min", "value": 33
+                        }, "end_location": {"lat": 29.7521688, "lng": -95.33706169999999
+                        }, "html_instructions": "Head <b>southeast</b> on <b>Canal St</b> toward <b>Nolan St</b>", "polyline": {"points": "mdrtDnz{dQl@kAv@cBdBkD"
+                            }, "start_location": {"lat": 29.7531944, "lng": -95.3388006
+                            }, "travel_mode": "DRIVING"
                         },
-                        {'distance': {'text': '0.2 mi', 'value': 365
-                            }, 'duration': {'text': '1 min', 'value': 62
-                            }, 'end_location': {'lat': 29.7548676, 'lng': -95.3349168
-                            }, 'html_instructions': 'Turn <b>left</b> at the 3rd cross street onto <b>N York St</b>', 'maneuver': 'turn-left', 'polyline': {'points': 'a~qtDro{dQyBaB_CcBuB_BuB
-                                }Au@g@'
-                            }, 'start_location': {'lat': 29.7521688, 'lng': -95.33706169999999
-                            }, 'travel_mode': 'DRIVING'
+                        {"distance": {"text": "0.2 mi", "value": 365
+                            }, "duration": {"text": "1 min", "value": 62
+                            }, "end_location": {"lat": 29.7548676, "lng": -95.3349168
+                            }, "html_instructions": "Turn <b>left</b> at the 3rd cross street onto <b>N York St</b>", "maneuver": "turn-left", "polyline": {"points": "a~qtDro{dQyBaB_CcBuB_BuB}Au@g@"
+                            }, "start_location": {"lat": 29.7521688, "lng": -95.33706169999999
+                            }, "travel_mode": "DRIVING"
                         },
-                        {'distance': {'text': '348 ft', 'value': 106
-                            }, 'duration': {'text': '1 min', 'value': 35
-                            }, 'end_location': {'lat': 29.7553068, 'lng': -95.33571289999999
-                            }, 'html_instructions': 'Turn <b>left</b> onto <b>Navigation Blvd</b><div style="font-size:0.9em">Destination will be on the right</div>', 'maneuver': 'turn-left', 'polyline': {'points': '
-                            }nrtDfb{dQQOIN[bAQh@Kl@A@'
-                                }, 'start_location': {'lat': 29.7548676, 'lng': -95.3349168
-                                }, 'travel_mode': 'DRIVING'
+                        {"distance": {"text": "348 ft", "value": 106
+                            }, "duration": {"text": "1 min", "value": 35
+                            }, "end_location": {"lat": 29.7553068, "lng": -95.33571289999999
+                            }, "html_instructions": "Turn <b>left</b> onto <b>Navigation Blvd</b><div style='font-size:0.9em'>Destination will be on the right</div>", "maneuver": "turn-left", "polyline": {"points": "}nrtDfb{dQQOIN[bAQh@Kl@A@"
+                                }, "start_location": {"lat": 29.7548676, "lng": -95.3349168
+                                }, "travel_mode": "DRIVING"
                             }
-                        ], 'traffic_speed_entry': [], 'via_waypoint': []
+                        ], "traffic_speed_entry": [], "via_waypoint": []
                     }
-                ], 'overview_polyline': {'points': 'mdrtDnz{dQdBoDdBkDyBaBuFcEkDeCQOINm@lBMn@'
-                    }, 'summary': 'Canal St and N York St', 'warnings': [], 'waypoint_order': []
+                ], "overview_polyline": {"points": "mdrtDnz{dQdBoDdBkDyBaBuFcEkDeCQOINm@lBMn@"
+                    }, "summary": "Canal St and N York St", "warnings": [], "waypoint_order": []
                 }
             ]
