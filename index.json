@@ -1,38 +1,263 @@
-{
-    "destination_addresses":[
-       "N York St @ Navigation Blvd, Houston, TX 77003, USA",
-       "2800 Navigation Blvd, Houston, TX 77003, USA"
-    ],
-    "origin_addresses":[
-       "3328 Canal St, Houston, TX 77003, USA"
-    ],
-    "rows":[
-       {
-          "elements":[
-             {
-                "distance":{
-                   "text":"0.8 km",
-                   "value":832
+[
+    {
+        "bounds": {
+            "northeast": {
+                "lat": 29.7568173,
+                "lng": -95.3357949
+            },
+            "southwest": {
+                "lat": 29.7526766,
+                "lng": -95.3428897
+            }
+        },
+        "copyrights": "Map data \u00a92018 Google",
+        "legs": [
+            {
+                "distance": {
+                    "text": "0.4 mi",
+                    "value": 699
                 },
-                "duration":{
-                   "text":"2 mins",
-                   "value":109
+                "duration": {
+                    "text": "2 mins",
+                    "value": 101
                 },
-                "status":"OK"
-             },
-             {
-                "distance":{
-                   "text":"0.7 km",
-                   "value":721
+                "end_address": "2814 Navigation Blvd, Houston, TX 77003, USA",
+                "end_location": {
+                    "lat": 29.7564926,
+                    "lng": -95.3414267
                 },
-                "duration":{
-                   "text":"2 mins",
-                   "value":105
+                "start_address": "3302 Canal St, Houston, TX 77003, USA",
+                "start_location": {
+                    "lat": 29.7531944,
+                    "lng": -95.3388006
                 },
-                "status":"OK"
-             }
-          ]
-       }
-    ],
-    "status":"OK"
- }
+                "steps": [
+                    {
+                        "distance": {
+                            "text": "0.3 mi",
+                            "value": 482
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 51
+                        },
+                        "end_location": {
+                            "lat": 29.755689,
+                            "lng": -95.3428897
+                        },
+                        "html_instructions": "Head <b>northwest</b> on <b>Canal St</b> toward <b>N Palmer St</b>",
+                        "polyline": {
+                            "points": "mdrtDnz{dQa@v@KPKTWd@mBvD{AtCmBpDiBjD"
+                        },
+                        "start_location": {
+                            "lat": 29.7531944,
+                            "lng": -95.3388006
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.1 mi",
+                            "value": 153
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 38
+                        },
+                        "end_location": {
+                            "lat": 29.7568173,
+                            "lng": -95.34197979999999
+                        },
+                        "html_instructions": "Turn <b>right</b> onto <b>Delano St</b>",
+                        "maneuver": "turn-right",
+                        "polyline": {
+                            "points": "atrtD`t|dQoDmCq@g@"
+                        },
+                        "start_location": {
+                            "lat": 29.755689,
+                            "lng": -95.3428897
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "210 ft",
+                            "value": 64
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 12
+                        },
+                        "end_location": {
+                            "lat": 29.7564926,
+                            "lng": -95.3414267
+                        },
+                        "html_instructions": "Turn <b>right</b> onto <b>Navigation Blvd</b><div style=\"font-size:0.9em\">Destination will be on the right</div>",
+                        "maneuver": "turn-right",
+                        "polyline": {
+                            "points": "c{rtDjn|dQb@w@BGXm@"
+                        },
+                        "start_location": {
+                            "lat": 29.7568173,
+                            "lng": -95.34197979999999
+                        },
+                        "travel_mode": "DRIVING"
+                    }
+                ],
+                "traffic_speed_entry": [],
+                "via_waypoint": []
+            },
+            {
+                "distance": {
+                    "text": "0.4 mi",
+                    "value": 643
+                },
+                "duration": {
+                    "text": "1 min",
+                    "value": 80
+                },
+                "end_address": "3306 Navigation Blvd, Houston, TX 77003, USA",
+                "end_location": {
+                    "lat": 29.7548287,
+                    "lng": -95.3359413
+                },
+                "start_address": "2814 Navigation Blvd, Houston, TX 77003, USA",
+                "start_location": {
+                    "lat": 29.7564926,
+                    "lng": -95.3414267
+                },
+                "steps": [
+                    {
+                        "distance": {
+                            "text": "0.4 mi",
+                            "value": 596
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 58
+                        },
+                        "end_location": {
+                            "lat": 29.7551709,
+                            "lng": -95.33584309999999
+                        },
+                        "html_instructions": "Head <b>southeast</b> on <b>Navigation Blvd</b> toward <b>N Paige St</b>",
+                        "polyline": {
+                            "points": "ayrtD|j|dQ`@}@hBsDxAwCx@_BFQFW@O@O@QCm@CQEYQoAKa@Eg@I}@Cs@Ai@Bi@Be@@MBQDW"
+                        },
+                        "start_location": {
+                            "lat": 29.7564926,
+                            "lng": -95.3414267
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "154 ft",
+                            "value": 47
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 22
+                        },
+                        "end_location": {
+                            "lat": 29.7548287,
+                            "lng": -95.3359413
+                        },
+                        "html_instructions": "Turn <b>right</b> onto <b>N Sampson St</b>",
+                        "maneuver": "turn-right",
+                        "polyline": {
+                            "points": "yprtD~g{dQBCHAHAHAR@LZ"
+                        },
+                        "start_location": {
+                            "lat": 29.7551709,
+                            "lng": -95.33584309999999
+                        },
+                        "travel_mode": "DRIVING"
+                    }
+                ],
+                "traffic_speed_entry": [],
+                "via_waypoint": []
+            },
+            {
+                "distance": {
+                    "text": "0.3 mi",
+                    "value": 412
+                },
+                "duration": {
+                    "text": "1 min",
+                    "value": 61
+                },
+                "end_address": "3302 Canal St, Houston, TX 77003, USA",
+                "end_location": {
+                    "lat": 29.7531944,
+                    "lng": -95.3388006
+                },
+                "start_address": "3306 Navigation Blvd, Houston, TX 77003, USA",
+                "start_location": {
+                    "lat": 29.7548287,
+                    "lng": -95.3359413
+                },
+                "steps": [
+                    {
+                        "distance": {
+                            "text": "0.2 mi",
+                            "value": 309
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 42
+                        },
+                        "end_location": {
+                            "lat": 29.7526766,
+                            "lng": -95.3379167
+                        },
+                        "html_instructions": "Head <b>southwest</b> on <b>N Sampson St</b> toward <b>Engelke St</b>",
+                        "polyline": {
+                            "points": "unrtDrh{dQ@BLVT^Xb@FJFF^VbAx@|BbBzB`B"
+                        },
+                        "start_location": {
+                            "lat": 29.7548287,
+                            "lng": -95.3359413
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "338 ft",
+                            "value": 103
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 19
+                        },
+                        "end_location": {
+                            "lat": 29.7531944,
+                            "lng": -95.3388006
+                        },
+                        "html_instructions": "Turn <b>right</b> onto <b>Canal St</b><div style=\"font-size:0.9em\">Destination will be on the left</div>",
+                        "maneuver": "turn-right",
+                        "polyline": {
+                            "points": "gartD~t{dQw@bBm@jA"
+                        },
+                        "start_location": {
+                            "lat": 29.7526766,
+                            "lng": -95.3379167
+                        },
+                        "travel_mode": "DRIVING"
+                    }
+                ],
+                "traffic_speed_entry": [],
+                "via_waypoint": []
+            }
+        ],
+        "overview_polyline": {
+            "points": "mdrtDnz{dQsNpXaFuDf@_Az@kBbEkI`AqBHg@Ba@G_AWiBKa@Eg@MqB@sAN}ALERCR@LZNZn@bANR|IvGeBnD"
+        },
+        "summary": "Canal St",
+        "warnings": [],
+        "waypoint_order": [
+            0,
+            1
+        ]
+    }
+]
