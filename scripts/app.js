@@ -65,7 +65,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 
     // If status is good save to database
     
-    addAddresses()
+    addAddresses(route)
 
     } else {
       window.alert('Directions request failed due to ' + status);
@@ -74,23 +74,30 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 }
 
 
-
 // Capture data if status from calculateAndDisplayRoute() good
-function addAddresses(){
+function addAddresses(routes){
 
-  let txtStart = document.getElementById("start")
-  let txtEnd = document.getElementById("end")
-  
-  let addressArray = []
+  // console.log(routes)
 
-  addressArray.push({address: txtStart.value})
-  addressArray.push({address: txtEnd.value})
+    let addressArray = []
 
-  // console.log(addressArray)
+     // For each route, display summary information.
+     for (let i = 0; i < routes.legs.length; i++) {
+        let start_address = routes.legs[i].start_address
+        let end_address = routes.legs[i].end_address
+        let distance = routes.legs[i].distance.text 
+
+        addressArray.push({start_address: start_address, end_address: end_address, distance: distance})
+       
+    }
+
+  console.log(addressArray)
 
   // Add to Firebase
   addToDatabase(addressArray) 
 }
+
+
 
 window.addEventListener("load", function() {
   if (window.matchMedia("(max-width: 768px)").matches) {

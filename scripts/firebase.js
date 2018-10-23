@@ -99,13 +99,14 @@ loginButton.addEventListener('click', function() {
         locationsRef = database.ref('users/' + userId + '/locations');
         let destinations = []
 
-        configureLocations(waypts)
+        // configureLocations(waypts) // Commented for now
 
 
     });
 });
 
 
+/* Commented for now
 const configureLocations = (locationsRef) => {
     locationsRef.on('value', (snapshot => {
 
@@ -117,7 +118,7 @@ const configureLocations = (locationsRef) => {
         //--------------------------------whatever someone is doing to display stuff
     }));
 }
-
+*/
 
 
 
