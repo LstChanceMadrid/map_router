@@ -77,7 +77,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 
 // Capture data if status from calculateAndDisplayRoute() good
 function addAddresses(){
-  let btnSubmit = document.getElementById("submit")
+
   let txtStart = document.getElementById("start")
   let txtEnd = document.getElementById("end")
   
