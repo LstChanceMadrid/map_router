@@ -78,6 +78,10 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
         summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
       }
+
+      // If status is good save to database
+      addAddresses(route)
+
     } else {
       window.alert('Directions request failed due to ' + status);
     }
@@ -152,3 +156,28 @@ function constructMapsUrl(originId, destinationId, waypoints) {
 }
 
 
+
+
+
+// Capture data if status from calculateAndDisplayRoute() good
+function addAddresses(routes){
+  
+  // console.log(routes)
+
+    let addressArray = []
+
+     // For each route, display summary information.
+     for (let i = 0; i < routes.legs.length; i++) {
+        let start_address = routes.legs[i].start_address
+        let end_address = routes.legs[i].end_address
+        let distance = routes.legs[i].distance.text 
+
+        addressArray.push({start_address: start_address, end_address: end_address, distance: distance})
+       
+    }
+
+  console.log(addressArray)
+
+  // Add to Firebase
+  addToDatabase(addressArray) 
+}
