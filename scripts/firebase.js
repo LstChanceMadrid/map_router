@@ -37,6 +37,7 @@ registerButton.addEventListener('click', function() {
     .then(function(user) {
         registerEmailTextBox.value = "";
         registerPasswordTextBox.value = "";
+        alert("YOU'RE REGISTERED HOOORAAYYYYY")
         console.log('success');
     })
 
@@ -92,20 +93,24 @@ loginButton.addEventListener('click', function() {
         
         loginEmailTextBox.value = "";
         loginPasswordTextBox.value = "";
+        alert("you logged in.. congratulations to you. we're so proud you remembered your credentials and.. stuff.")
         console.log('login success');
         userId = firebase.auth().currentUser.uid;
         locationsRef = database.ref('users/' + userId + '/locations');
         let destinations = []
 
-        configureLocations(locationsRef)
-        return locationsRef
+        configureLocations(waypts)
+
 
     });
 });
 
+
 const configureLocations = (locationsRef) => {
     locationsRef.on('value', (snapshot => {
-        stores = [];
+
+        waypnts = [];
+
         snapshot.forEach(childSnapshot => {
             stores.push(childSnapshot.val())
         });

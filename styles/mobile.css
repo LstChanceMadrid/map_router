@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+}
+
+header {
+    position: absolute;
+    background: black;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+
+}
+#nav-button {
+    position: absolute;
+    top:1em;
+    right: 1em;
+}
+.nav-container {
+    width: 100%;
+    position: absolute;
+    top: 100px;
+
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 2;
+}
+
+.nav-credential-container {
+    right: 1em;
+    top: 100px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1em;
+    width: 50%;
+    margin: auto;
+}
+
+.nav-credential-label {
+}
+
+.nav-credential-text-box {
+}
+
+#right-panel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+#directions-panel {
+    width: 100%;
+    margin-bottom: 1em;
+}
