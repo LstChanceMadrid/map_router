@@ -1,68 +1,72 @@
 
-// Still needs to be changes to capture an array of objects
-function gatherKeyValuesFromJSON() {
 
-    fetch("index.json")
 
-        .then(function(response){
-            return response.json();
-        })
+function initMap() {
+  let directionsService = new google.maps.DirectionsService;
+  let directionsDisplay = new google.maps.DirectionsRenderer;
+  let map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 10,
+    center: {lat: 29.75, lng: -95.33}
+  });
+  directionsDisplay.setMap(map);
 
-        .then(function(obj){
-
-            for (let key in obj){
-
-                // Every leg of the journey
-                legsInfoArray = obj[key].legs;
-
-                legsInfoArray.forEach(function(leg){
-
-                    let distanceObj = leg.distance              // {text: "0.4 mi", value: 674}           
-                    let durantionObj = leg.duration             // {text: "2 mins", value: 130}
-
-                    let startAddress = leg.start_address        
-                    let startLocationObj = leg.start_location   // {lat: 29.7531944, lng: -95.3388006}
-
-                    let endAddress = leg.end_address
-                    let endLocationObj = leg.end_location       // {lat: 29.7553068, lng: -95.33571289999999}
-                    
-                    // Create object with specific items
-                    legInfoObj = {
-                        key: key,
-                        distance: distanceObj,
-                        duration: durantionObj,
-                        startAddress: startAddress,
-                        startLocation: startLocationObj,
-                        endAddress: endAddress,
-                        endLocation: endLocationObj,
-                    }
-
-                });
-            }
-
-            return legInfoObj
-        })
-
-        .then (function(legInfoObj){
-            initMap(legInfoObj);
-        })
+  document.getElementById('submit').addEventListener('click', function() {
+    calculateAndDisplayRoute(directionsService, directionsDisplay);
+  });
 }
 
-gatherKeyValuesFromJSON();
+let input_location = document.getElementById("inputLocation")
+let input_class = document.getElementsByClassName("inputClass")
+let div_locations = document.getElementById("divAddLocation")
 
-
-// Map section //
-// Initialize and add the map
-function initMap(legInfoObj) {
-
-    // console.log(legInfoObj)
-
-    // The location of Uluru
-    var uluru = {lat: legInfoObj.startLocation.lat, lng: legInfoObj.startLocation.lng};
-
-    // The map, centered at Uluru
-    var map = new google.maps.Map(document.getElementById('map'), {zoom: 4, center: uluru});
+let waypts
+div_locations.addEventListener('keyup',function(e){
+  
+   waypts = [];
+  if (e.keyCode === 13){
+    for(let i = 0; i < input_class.length; i++){
+      let new_location = input_class[i].value
+    waypts.push({location: new_location, stopover:true})
+    }
+    let newInputBox = document.createElement("input")
+    newInputBox.type ="text"
+    newInputBox.className = "inputClass"
+   
     
-    // The marker, positioned at Uluru
-    var marker = new google.maps.Marker({position: uluru, map: map});
+    div_locations.appendChild(newInputBox)
+    
+  }
+  
+})
+
+function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+  
+  
+
+  directionsService.route({
+    origin: document.getElementById('start').value,
+    destination: document.getElementById('end').value,
+    waypoints: waypts,
+    optimizeWaypoints: true,
+    travelMode: 'DRIVING'
+  }, function(response, status) {
+    if (status === 'OK') {
+      directionsDisplay.setDirections(response);
+      let route = response.routes[0];
+      let summaryPanel = document.getElementById('directions-panel');
+      summaryPanel.innerHTML = '';
+      // For each route, display summary information.
+      for (let i = 0; i < route.legs.length; i++) {
+        let routeSegment = i + 1;
+        summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
+            '</b><br>';
+        summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
+        summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
+        summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
+      }
+    } else {
+      window.alert('Directions request failed due to ' + status);
+    }
+  });
 }
+
