@@ -50,7 +50,7 @@
 
 const database = firebase.database();
 
-// ------ register
+// ---------------- register
 
 let registerEmailTextBox = document.getElementById('register-email-text-box');
 let registerPasswordTextBox = document.getElementById('register-password-text-box');
@@ -73,6 +73,7 @@ registerPasswordTextBox.addEventListener('keyup', function(event) {
 });
 
 // --- button
+
 registerButton.addEventListener('click', function() {
 
     let email = registerEmailTextBox.value;
@@ -95,11 +96,13 @@ registerButton.addEventListener('click', function() {
     });
 });
 
-// ------- log in
+// -------------- log in
 
 let loginEmailTextBox = document.getElementById("login-email-text-box");
 let loginPasswordTextBox = document.getElementById("login-password-text-box");
 let loginButton = document.getElementById('login-button');
+
+// --- email
 
 registerEmailTextBox.addEventListener('keyup', function(event) {
     let key = event.keyCode;
@@ -108,6 +111,8 @@ registerEmailTextBox.addEventListener('keyup', function(event) {
     }
 });
 
+// --- password
+
 registerPasswordTextBox.addEventListener('keyup', function(event) {
     let key = event.keyCode;
     if (key === 13) {
@@ -115,6 +120,7 @@ registerPasswordTextBox.addEventListener('keyup', function(event) {
     }
 });
 
+// -- button
 loginButton.addEventListener('click', function() {
 
     let email = loginEmailTextBox.value;
@@ -130,6 +136,7 @@ loginButton.addEventListener('click', function() {
     })
 
     .then(function(user) {
+        
         loginEmailTextBox.value = "";
         loginPasswordTextBox.value = "";
         console.log('login success');
@@ -149,6 +156,6 @@ const configureLocations = (locationsRef) => {
         snapshot.forEach(childSnapshot => {
             stores.push(childSnapshot.val())
         });
-        //--------------------------------whatever someone is doing to display shit
+        //--------------------------------whatever someone is doing to display stuff
     }));
 }
