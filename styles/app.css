@@ -46,3 +46,11 @@ html, body {
   height: 174px;
 }
 
+
+
+#saveSearch, #submit {
+  font-size: 15px;
+  border-radius: 5px;
+  padding: 2px 3px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
+}
