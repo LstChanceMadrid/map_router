@@ -112,3 +112,20 @@ const configureLocations = (locationsRef) => {
         //--------------------------------whatever someone is doing to display stuff
     }));
 }
+
+
+
+
+
+
+// Add array of addresses to Firebase
+function addToDatabase(addressArray) {
+    // console.log(addressArray)
+
+    let refAddress = locationsRef.child("Addresses");
+    refAddress.push(addressArray)
+    // refAddress.child("Addy").set(addressArray)
+
+    }
+
+

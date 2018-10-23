@@ -34,7 +34,7 @@ div_locations.addEventListener('keyup',function(e){
     div_locations.appendChild(newInputBox)
     
   }
-  
+
 })
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
@@ -62,6 +62,11 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
         summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
       }
+
+    // If status is good save to database
+    
+    addAddresses()
+
     } else {
       window.alert('Directions request failed due to ' + status);
     }
@@ -69,3 +74,22 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 }
 
 
+
+
+
+// Capture data if status from calculateAndDisplayRoute() good
+function addAddresses(){
+  let btnSubmit = document.getElementById("submit")
+  let txtStart = document.getElementById("start")
+  let txtEnd = document.getElementById("end")
+  
+  let addressArray = []
+
+  addressArray.push({address: txtStart.value})
+  addressArray.push({address: txtEnd.value})
+
+  // console.log(addressArray)
+
+  // Add to Firebase
+  addToDatabase(addressArray) 
+}
