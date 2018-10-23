@@ -33,10 +33,28 @@ header {
     right: 1em;
     top: 100px;
     background: rgba(0, 0, 0, 0.5);
+    padding: 1em;
+    width: 50%;
+    margin: auto;
 }
 
 .nav-credential-label {
 }
 
 .nav-credential-text-box {
+}
+
+#right-panel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+#directions-panel {
+    width: 100%;
+    margin-bottom: 1em;
 }

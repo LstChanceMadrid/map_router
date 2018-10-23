@@ -89,3 +89,7 @@ document.getElementById("nav-button").addEventListener('click', function() {
     document.getElementById("nav-container").style.display = "none"
   }
 })
+
+document.getElementById('login-button').addEventListener('click', function() {
+  document.getElementById("nav-container").style.display = "none"
+})
