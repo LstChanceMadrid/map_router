@@ -1,8 +1,8 @@
+backendpy_juan
 <!DOCTYPE html>
 
   <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
+    
     
     <title>Directions</title>
    
@@ -56,5 +56,65 @@
     
     
     
+
+=======
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title></title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="styles/app.css">
+
+        <link rel="stylesheet" media="screen and (max-width: 768px)" href="styles/mobile.css">
+
+        <link rel="stylesheet" media="screen and (min-width: 769px)" href="styles/tablet.css">
+
+        <link rel="stylesheet" media="screen and (min-width: 1200px)" href="styles/desktop.css">
+    </head>
+
+    <body>
+        <header>
+        </header>
+
+        <main>
+            <h3>My Google Maps Demo</h3>
+            <!--The div element for the map -->
+            <div id="map"></div>
+
+
+        </main>
+
+        <footer>
+        </footer>
+    </body>
+
+    <script src="scripts/apikey.js" type="text/javascript"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+    
+    <script>
+        // Initialize Firebase
+        let config = {
+            apiKey: firebaseAPIKey,
+            authDomain: "map-router-e0727.firebaseapp.com",
+            databaseURL: "https://map-router-e0727.firebaseio.com",
+            projectId: "map-router-e0727",
+            storageBucket: "map-router-e0727.appspot.com",
+            messagingSenderId: "894019450637"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <script src="libraries/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=apikey"></script>
+
+    <script src="scripts/app.js" type="text/javascript"></script>
 
 </html>
