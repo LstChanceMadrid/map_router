@@ -97,15 +97,18 @@ loginButton.addEventListener('click', function() {
         locationsRef = database.ref('users/' + userId + '/locations');
         let destinations = []
 
-        configureLocations(locationsRef)
-        return locationsRef
+        configureLocations(waypts)
+
 
     });
 });
 
+
 const configureLocations = (locationsRef) => {
     locationsRef.on('value', (snapshot => {
-        stores = [];
+
+        waypnts = [];
+
         snapshot.forEach(childSnapshot => {
             stores.push(childSnapshot.val())
         });
