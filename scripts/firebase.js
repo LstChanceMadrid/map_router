@@ -58,19 +58,19 @@ let loginButton = document.getElementById('login-button');
 
 // --- email
 
-registerEmailTextBox.addEventListener('keyup', function(event) {
+loginEmailTextBox.addEventListener('keyup', function(event) {
     let key = event.keyCode;
     if (key === 13) {
-        registerPasswordTextBox.focus();
+        loginPasswordTextBox.focus();
     }
 });
 
 // --- password
 
-registerPasswordTextBox.addEventListener('keyup', function(event) {
+loginPasswordTextBox.addEventListener('keyup', function(event) {
     let key = event.keyCode;
     if (key === 13) {
-        registerButton.click();
+        loginButton.click();
     }
 });
 
@@ -93,6 +93,7 @@ loginButton.addEventListener('click', function() {
         
         loginEmailTextBox.value = "";
         loginPasswordTextBox.value = "";
+        window.location.href = "../index.html";
         alert("you logged in.. congratulations to you. we're so proud you remembered your credentials and.. stuff.");
         console.log('login success');
         userId = firebase.auth().currentUser.uid;
