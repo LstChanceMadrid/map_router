@@ -1,6 +1,8 @@
 
 // firebase
 
+let locationsRef;
+
 const database = firebase.database();
 
 // ---------------- register
@@ -96,10 +98,9 @@ loginButton.addEventListener('click', function() {
         alert("you logged in.. congratulations to you. we're so proud you remembered your credentials and.. stuff.");
         console.log('login success');
         userId = firebase.auth().currentUser.uid;
-        let locationsRef = database.ref('users/' + userId + '/locations');
+        locationsRef = database.ref('users/' + userId + '/locations');
         let destinations = [];
 
-        return locationsRef
         // configureLocations(waypts); // Commented for now
 
     });
@@ -107,7 +108,6 @@ loginButton.addEventListener('click', function() {
 
 // Add array of addresses to Firebase
 function addToDatabase(addressArray) {
-    // console.log(addressArray)
 
     let refAddress = locationsRef.child("Addresses");
     refAddress.push(addressArray);
