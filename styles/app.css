@@ -45,7 +45,7 @@ html, body {
 	height: 174px;
 }
 
-#saveSearch, #submit {
+#btnSaveSearch, #submit {
 	font-size: 15px;
 	border-radius: 5px;
 	padding: 2px 3px;

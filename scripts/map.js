@@ -5,6 +5,13 @@ let geocoder;
 let waypts
 let hashPlaces = {};
 
+let storeCurrentRoutes;
+
+// Initialized button as disabled until button submit search route clicked and validated
+let btnSaveSearch = document.getElementById("btnSaveSearch");
+btnSaveSearch.disabled = true;
+
+
 function initMap() {
 	let directionsService = new google.maps.DirectionsService;
 	let directionsDisplay = new google.maps.DirectionsRenderer;
@@ -74,8 +81,10 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 				summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
 			}
 
-			// If status is good save to database
-			addAddresses(route);
+			// If status is good enable option to save to database
+			storeCurrentRoutes = route // store current route
+			document.getElementById("btnSaveSearch").disabled = false;
+			// addAddresses(route);
 
 		} else {
 			window.alert('Directions request failed due to ' + status);
@@ -152,6 +161,12 @@ function constructMapsUrl(originId, destinationId, waypoints) {
 
 
 
+// User option to save route
+btnSaveSearch.addEventListener('click', function() {
+	addAddresses(storeCurrentRoutes);
+	btnSaveSearch.disabled = true;
+});
+
 
 // Capture data if status from calculateAndDisplayRoute() good
 function addAddresses(routes){
@@ -170,8 +185,14 @@ function addAddresses(routes){
        
     }
 
-	console.log(addressArray);
+	// console.log(addressArray);
 
 	// Add to Firebase
 	addToDatabase(addressArray);
 }
+
+
+
+
+
+
