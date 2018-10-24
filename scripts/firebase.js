@@ -37,7 +37,7 @@ registerButton.addEventListener('click', function() {
     .then(function(user) {
         registerEmailTextBox.value = "";
         registerPasswordTextBox.value = "";
-        alert("YOU'RE REGISTERED HOOORAAYYYYY")
+        alert("YOU'RE REGISTERED HOOORAAYYYYY");
         console.log('success');
     })
 
@@ -85,7 +85,7 @@ loginButton.addEventListener('click', function() {
     .catch(function(error) {
         let errorCode = error.code;
         let errorMessage = error.message;
-        alert(errorMessage)
+        alert(errorMessage);
         console.log(error);
     })
 
@@ -93,17 +93,27 @@ loginButton.addEventListener('click', function() {
         
         loginEmailTextBox.value = "";
         loginPasswordTextBox.value = "";
-        alert("you logged in.. congratulations to you. we're so proud you remembered your credentials and.. stuff.")
+        alert("you logged in.. congratulations to you. we're so proud you remembered your credentials and.. stuff.");
         console.log('login success');
         userId = firebase.auth().currentUser.uid;
         locationsRef = database.ref('users/' + userId + '/locations');
-        let destinations = []
+        let destinations = [];
 
-        // configureLocations(waypts) // Commented for now
-
+        // configureLocations(waypts); // Commented for now
 
     });
 });
+
+// Add array of addresses to Firebase
+function addToDatabase(addressArray) {
+    // console.log(addressArray)
+
+    let refAddress = locationsRef.child("Addresses");
+    refAddress.push(addressArray);
+    // refAddress.child("Addy").set(addressArray);
+}
+
+
 
 
 /* Commented for now
@@ -113,7 +123,7 @@ const configureLocations = (locationsRef) => {
         waypnts = [];
 
         snapshot.forEach(childSnapshot => {
-            stores.push(childSnapshot.val())
+            stores.push(childSnapshot.val());
         });
         //--------------------------------whatever someone is doing to display stuff
     }));
@@ -124,14 +134,6 @@ const configureLocations = (locationsRef) => {
 
 
 
-// Add array of addresses to Firebase
-function addToDatabase(addressArray) {
-    // console.log(addressArray)
 
-    let refAddress = locationsRef.child("Addresses");
-    refAddress.push(addressArray)
-    // refAddress.child("Addy").set(addressArray)
-
-    }
 
 

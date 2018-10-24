@@ -1,30 +1,30 @@
 let mapContainer = document.getElementById('map');
 let navContainer = document.getElementById("nav-container");
 let navButton = document.getElementById("nav-button");
-let loginButton = document.getElementById('login-button')
+let loginButton = document.getElementById('login-button');
 
 window.addEventListener("load", function() {
 	
 	if (window.matchMedia("(max-width: 768px)").matches) {
 		mapContainer.style.marginTop = "100px";
-		mapContainer.style.width = "100%"
-		navContainer.style.display = "none"
+		mapContainer.style.width = "100%";
+		navContainer.style.display = "none";
 		console.log("Screen width less than 768px");
 	} else {
-		navButton.style.display = "none"
+		navButton.style.display = "none";
 		console.log("Screen more than 768px");
 	}
 });
   
 navButton.addEventListener('click', function() {
 	if (navContainer.style.display === "none") {
-		navContainer.style.display = "flex"
+		navContainer.style.display = "flex";
 	} else {
-		navContainer.style.display = "none"
+		navContainer.style.display = "none";
 	}
 });
   
 loginButton.addEventListener('click', function() {
-	navContainer.style.display = "none"
+	navContainer.style.display = "none";
 });
   
