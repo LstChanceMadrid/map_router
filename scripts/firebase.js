@@ -96,9 +96,10 @@ loginButton.addEventListener('click', function() {
         alert("you logged in.. congratulations to you. we're so proud you remembered your credentials and.. stuff.");
         console.log('login success');
         userId = firebase.auth().currentUser.uid;
-        locationsRef = database.ref('users/' + userId + '/locations');
+        let locationsRef = database.ref('users/' + userId + '/locations');
         let destinations = [];
 
+        return locationsRef
         // configureLocations(waypts); // Commented for now
 
     });

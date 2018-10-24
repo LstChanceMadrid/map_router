@@ -1,7 +1,7 @@
 let mapContainer = document.getElementById('map');
 let navContainer = document.getElementById("nav-container");
 let navButton = document.getElementById("nav-button");
-let loginButton = document.getElementById('login-button');
+//loginButton = document.getElementById('login-button'); <in firebase>
 
 window.addEventListener("load", function() {
 	

@@ -2,6 +2,7 @@ let origin;
 let destination;
 let map;
 let geocoder;
+let waypts
 let hashPlaces = {};
 
 function initMap() {
