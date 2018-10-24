@@ -95,7 +95,7 @@ loginButton.addEventListener('click', function() {
         
         loginEmailTextBox.value = "";
         loginPasswordTextBox.value = "";
-        window.location.href = "../index.html";
+        // window.location.href = "../index.html";  // commented out for now b/c resets user info 
         alert("you logged in.. congratulations to you. we're so proud you remembered your credentials and.. stuff.");
         console.log('login success');
         userId = firebase.auth().currentUser.uid;
