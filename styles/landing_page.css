@@ -3,7 +3,8 @@
 }
 
 body {
-    margin: 0;
+    margin: auto;
+    max-width: 1920px;
     padding: 1em;
     background: black;   
     color: white;
@@ -23,7 +24,8 @@ header {
     background: rgba(0, 0, 0, 0.15);
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between
+    justify-content: space-between;
+    width: 100%;
 }
 
     #product-title {
@@ -97,3 +99,15 @@ footer {
     background: rgba(0, 0, 0, 0.15);
 }
 
+
+@media screen and (min-width: 769px) {
+
+    #background-video {
+        top: 0;
+        right: unset;
+        transform: translateX(-50%);
+        left: 50%;
+        margin: 0 auto;
+    }
+
+}
