@@ -1,7 +1,7 @@
 
 // firebase
 
-let locationsRef;
+let locationsRef;  // represents --> database.ref('users/' + userId + '/locations');
 
 const database = firebase.database();
 
@@ -104,6 +104,9 @@ loginButton.addEventListener('click', function() {
 
         // configureLocations(waypts); // Commented for now
 
+        // Once user has logged in we now have locationsRef nodes for Firebase
+        configureObservers()
+
     });
 });
 
@@ -114,8 +117,6 @@ function addToDatabase(addressArray) {
     refAddress.push(addressArray);
     // refAddress.child("Addy").set(addressArray);
 }
-
-
 
 
 /* Commented for now
@@ -131,6 +132,67 @@ const configureLocations = (locationsRef) => {
     }));
 }
 */
+
+
+// Configure changes
+function configureObservers() {
+
+    let refAddress = locationsRef.child("Addresses");
+
+    refAddress.on('value',function(snapshot){
+        
+        addresses = []
+  
+        snapshot.forEach(function(childSnapshot){
+            addresses.push(childSnapshot.val())
+        })
+
+        // console.log(addresses)
+        displayAddresses(addresses)
+    })
+  }
+
+
+// Display all addresses and items
+function displayAddresses(addresses) {
+  
+    let liItem = ""
+    let liItem2 = ""
+    let liCombined = ""
+
+    for (let key in addresses) {
+
+        liItem2 = ""                        
+        
+        let addressesArray = addresses[key]     // array of every user search [ [],[] ]
+            // console.log(key)                 // each key (ex: 0, 1, 2) represent a saved search in firebase
+
+            let searchNumber = parseInt(key) + 1
+            liItem2 = `<ul><b>SEARCH ${searchNumber}</b>`  // key represents a search saved
+
+            liItem = "";        // initialize
+
+        // Each route represent one point to the next with start and end addesses
+        for (let route in addressesArray) {
+            // console.log(addressesArray[route])                   // represent a leg taken to complete the route
+            // console.log(addressesArray[route].start_address)
+            // console.log(route)                                   // each route (ex: 0, 1, 2) represent each leg 
+            
+            let aLegOfRoute = addressesArray[route]
+
+            let leg = route
+            let start_address = aLegOfRoute.start_address
+            let end_address = aLegOfRoute.end_address
+
+            liItem += `<li>leg: ${leg} ~ <br>start:${start_address} <br>end: ${end_address}</li>`
+        }
+        
+        liCombined += liItem2 + liItem + '</ul>'
+    }
+
+    // console.log(liCombined)
+    ulAddressList.innerHTML = liCombined;
+}
 
 
 
