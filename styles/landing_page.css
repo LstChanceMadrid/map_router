@@ -1,0 +1,99 @@
+::placeholder {
+    color: rgb(255, 255, 255, 0.5);
+}
+
+body {
+    margin: 0;
+    padding: 1em;
+    background: black;   
+    color: white;
+}
+
+#background-video {
+    position: fixed;
+    top: 100px; /* adjust this based on size of header*/
+    right: 0;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    z-index: -1;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between
+}
+
+    #product-title {
+        margin: 0;
+        padding: 0;
+    }
+
+    #nav-button {
+        font-size: 2em;
+    }
+
+    #nav-button:hover {
+        cursor: pointer;
+    }
+
+        #nav-menu {
+            position: absolute;
+            top: 3em;
+            right: 0;
+            background: rgba(0, 0, 0, 0.75);
+            border-radius: 10px;
+            
+        }
+
+            .credentials-container {
+                text-align: center;
+            }
+
+                .credentials-label {
+                    padding: 0.5em 0;
+                    background: rgba(0, 0, 0, 1);
+                }
+
+                .text-box {
+                    padding: 0.5em;
+                    margin: 0.5em;
+                    color: white;
+                    background: rgb(80, 80, 80);
+                    border-color: cornflowerblue;
+                }
+
+                    .text-box:hover {
+                        border-color: aqua;
+                    }
+
+                .submit-credentials-button {
+                    right: 0;
+                    background: none;
+                    border: none;
+                    color: white;
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+
+                #register-button {
+                    margin-bottom: 0.5em;
+                }
+
+main {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+    #product-slogan {
+        text-align: center;
+        font-size: 3em;
+    }
+
+
+
+footer {
+    background: rgba(0, 0, 0, 0.15);
+}
+
