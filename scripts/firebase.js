@@ -1,4 +1,4 @@
-let deally = '{ "uid" : "' + decodeURI("https://map-router-e0727.firebaseio.com/users/quswYqbIuPWPGUxrwR4geKunYe83/locations".replace(/"/g, "").replace(/https:/g, "").replace(/\/\/map-router-e0727.firebaseio.com\/users\//g, "").replace(/\/locations/g, "") + '"}')
+
 // firebase
 
 let locationsRef;  // represents --> database.ref('users/' + userId + '/locations');
@@ -130,7 +130,7 @@ loginButton.addEventListener('click', function() {
 function addToDatabase(addressArray) {
     items = localStorage.getItem("locationsRef");
 
-    deally = '{ "uid" : "' + decodeURI(items.replace(/"/g, "").replace(/https:/g, "").replace(/\/\/map-router-e0727.firebaseio.com\/users\//g, "").replace(/\/locations/g, "") + '"}')
+    let deally = '{ "uid" : "' + decodeURI(items.replace(/"/g, "").replace(/https:/g, "").replace(/\/\/map-router-e0727.firebaseio.com\/users\//g, "").replace(/\/locations/g, "") + '"}')
 
     let parsedDeally = JSON.parse(deally)
 
