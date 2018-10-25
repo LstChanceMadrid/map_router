@@ -124,7 +124,7 @@ btnSaveSearch.disabled = true;
             summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
             summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
           }
-          // If status is good enable option to save to database
+      // If status is good enable option to save to database
 			storeCurrentRoutes = route // store current route
 			document.getElementById("btnSaveSearch").disabled = false;
 			// addAddresses(route);
