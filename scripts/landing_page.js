@@ -9,4 +9,4 @@ navButton.addEventListener('click', function() {
     } else {
         navMenu.style.display = "none";
     }
-})
+});
