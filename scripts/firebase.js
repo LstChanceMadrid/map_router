@@ -141,6 +141,9 @@ function addToDatabase(addressArray) {
     let refAddress = locationsRef.child("Addresses");
     refAddress.push(addressArray);
     // refAddress.child("Addy").set(addressArray);
+
+    // Added to display previous
+    configureObservers()
 }
 
 
