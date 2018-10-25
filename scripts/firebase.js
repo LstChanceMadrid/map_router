@@ -12,7 +12,7 @@ firebase.auth().onAuthStateChanged(function(users) {
     } else {
       // No user is signed in.
     }
-  });
+});
 
 
 
@@ -25,7 +25,9 @@ let registerButton = document.getElementById('register-button');
 
 // --- email
 registerEmailTextBox.addEventListener('keyup', function(event) {
+
     let key = event.keyCode;
+
     if (key === 13) {
         registerPasswordTextBox.focus();
     }
@@ -33,7 +35,9 @@ registerEmailTextBox.addEventListener('keyup', function(event) {
 
 // --- password
 registerPasswordTextBox.addEventListener('keyup', function(event) {
+
     let key = event.keyCode;
+
     if (key === 13) {
         registerButton.click();
     }
@@ -48,20 +52,20 @@ registerButton.addEventListener('click', function() {
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
 
-    .then(function(user) {
-        registerEmailTextBox.value = "";
-        registerPasswordTextBox.value = "";
-        alert("YOU'RE REGISTERED HOOORAAYYYYY");
-        console.log('success');
-    })
+        .then(function(user) {
+            registerEmailTextBox.value = "";
+            registerPasswordTextBox.value = "";
+            alert("YOU'RE REGISTERED HOOORAAYYYYY");
+            console.log('success');
+        })
 
-    .catch(function(error) {
-        let errorCode = error.code;
-        let errorMessage = error.message;
-        alert(errorMessage);
-        registerPasswordTextBox.value = "";
-        console.log(error);
-    });
+        .catch(function(error) {
+            let errorCode = error.code;
+            let errorMessage = error.message;
+            alert(errorMessage);
+            registerPasswordTextBox.value = "";
+            console.log(error);
+        });
 });
 
 // -------------- log in
@@ -74,6 +78,7 @@ let loginButton = document.getElementById('login-button');
 
 loginEmailTextBox.addEventListener('keyup', function(event) {
     let key = event.keyCode;
+
     if (key === 13) {
         loginPasswordTextBox.focus();
     }
@@ -83,6 +88,7 @@ loginEmailTextBox.addEventListener('keyup', function(event) {
 
 loginPasswordTextBox.addEventListener('keyup', function(event) {
     let key = event.keyCode;
+
     if (key === 13) {
         loginButton.click();
     }
@@ -96,33 +102,30 @@ loginButton.addEventListener('click', function() {
 
     firebase.auth().signInWithEmailAndPassword(email, password)
     
-    .catch(function(error) {
-        let errorCode = error.code;
-        let errorMessage = error.message;
-        alert(errorMessage);
-        console.log(error);
-    })
+        .catch(function(error) {
+            let errorCode = error.code;
+            let errorMessage = error.message;
+            alert(errorMessage);
+            console.log(error);
+        })
 
-    .then(function(user) {
+        .then(function(user) {
         
-        loginEmailTextBox.value = "";
-        loginPasswordTextBox.value = "";
-        //window.location.href = "../index.html";  // commented out for now b/c resets user info 
-        alert("you logged in.. congratulations to you. we're so proud you remembered your credentials and.. stuff.");
-        console.log('login success');
-        userId = firebase.auth().currentUser.uid;
-        locationsRef = database.ref('users/' + userId + '/locations/');localStorage.setItem("locationsRef", locationsRef);
+            loginEmailTextBox.value = "";
+            loginPasswordTextBox.value = "";
+            alert("you logged in.. congratulations to you. we're so proud you remembered your credentials and.. stuff.");
+            console.log('login success');
 
+            userId = firebase.auth().currentUser.uid;
+            locationsRef = database.ref('users/' + userId + '/locations/');localStorage.setItem("locationsRef", locationsRef);
 
+            // Once user has logged in we now have locationsRef nodes for Firebase
+            configureObservers()
+        })
 
-        // Once user has logged in we now have locationsRef nodes for Firebase
-        configureObservers()
-
-    })
-
-    .then(function(user) {
-        window.location.href = "../index.html"
-    })
+        .then(function(user) {
+            window.location.href = "../index.html"
+        })
 
 });
 
@@ -140,7 +143,6 @@ function addToDatabase(addressArray) {
 
     let refAddress = locationsRef.child("Addresses");
     refAddress.push(addressArray);
-    // refAddress.child("Addy").set(addressArray);
 
     // Added to display previous
     configureObservers()
@@ -160,10 +162,9 @@ function configureObservers() {
             addresses.push(childSnapshot.val())
         })
 
-        // console.log(addresses)
         displayAddresses(addresses)
     })
-  }
+}
 
 
 // Display all addresses and items
@@ -180,16 +181,15 @@ function displayAddresses(addresses) {
         let addressesArray = addresses[key]     // array of every user search [ [],[] ]
             // console.log(key)                 // each key (ex: 0, 1, 2) represent a saved search in firebase
 
-            let searchNumber = parseInt(key) + 1
-            liItem2 = `<ul><b>SEARCH ${searchNumber}</b>`  // key represents a search saved
+        let searchNumber = parseInt(key) + 1
+        liItem2 = `<ul><b>SEARCH ${searchNumber}</b>`  // key represents a search saved
 
-            liItem = "";        // initialize
+        liItem = "";        // initialize
 
         // Each route represent one point to the next with start and end addesses
         for (let route in addressesArray) {
-            // console.log(addressesArray[route])                   // represent a leg taken to complete the route
-            // console.log(addressesArray[route].start_address)
-            // console.log(route)                                   // each route (ex: 0, 1, 2) represent each leg 
+            // represent a leg taken to complete the route
+            // each route (ex: 0, 1, 2) represent each leg 
             
             let aLegOfRoute = addressesArray[route]
 
@@ -203,10 +203,6 @@ function displayAddresses(addresses) {
         liCombined += liItem2 + liItem + '</ul>'
     }
 
-    // console.log(liCombined)
     ulAddressList.innerHTML = liCombined;
 }
 
-
-JSON.parse('{ "uid : \"' + decodeURI("https://map-router-e0727.firebaseio.com/users/quswYqbIuPWPGUxrwR4geKunYe83/locations".replace(/"/g, "").replace(/https:/g, "").replace(/\/\/map-router-e0727.firebaseio.com\/users\//g, "").replace(/\/locations/g, "") + '"}'))
-// let deally = '{ "uid : " ' + decodeURI("https://map-router-e0727.firebaseio.com/users/quswYqbIuPWPGUxrwR4geKunYe83/locations".replace(/"/g, "").replace(/https:/g, "").replace(/\/\/map-router-e0727.firebaseio.com\/users\//g, "").replace(/\/locations/g, "") + '"}')
