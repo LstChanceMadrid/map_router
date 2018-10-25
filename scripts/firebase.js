@@ -197,7 +197,7 @@ function displayAddresses(addresses) {
             let start_address = aLegOfRoute.start_address
             let end_address = aLegOfRoute.end_address
 
-            liItem += `<li>leg: ${leg} ~ <br>start:${start_address} <br>end: ${end_address}</li>`
+            liItem += `<li>leg: ${leg}<br><b>start</b>:${start_address} <br><b>end</b>: ${end_address}</li>`
         }
         
         liCombined += liItem2 + liItem + '</ul>'

@@ -78,6 +78,54 @@ btnSaveSearch.disabled = true;
       }
       console.log(waypts)
     }
+
+
+
+
+
+
+
+
+// User option to save route
+btnSaveSearch.addEventListener('click', function() {
+	addAddresses(storeCurrentRoutes);
+	btnSaveSearch.disabled = true;
+});
+
+
+// Capture data if status from calculateAndDisplayRoute() good
+function addAddresses(routes){
+  
+	// console.log(routes)
+
+    let addressArray = [];
+
+    // For each route, display summary information.
+    for (let i = 0; i < routes.legs.length; i++) {
+        let start_address = routes.legs[i].start_address;
+        let end_address = routes.legs[i].end_address;
+        let distance = routes.legs[i].distance.text;
+
+        addressArray.push({start_address: start_address, end_address: end_address, distance: distance});
+       
+    }
+
+	// console.log(addressArray);
+
+	// Add to Firebase
+	addToDatabase(addressArray);
+}
+
+
+
+
+
+
+
+
+
+
+
     // autocomplete for all extra locations input
     function initialize(){ 
       locInput = document.getElementsByClassName("inputClass")
@@ -201,37 +249,6 @@ btnSaveSearch.disabled = true;
     }
 
 
-
-
-// User option to save route
-btnSaveSearch.addEventListener('click', function() {
-	addAddresses(storeCurrentRoutes);
-	btnSaveSearch.disabled = true;
-});
-
-
-// Capture data if status from calculateAndDisplayRoute() good
-function addAddresses(routes){
-  
-	// console.log(routes)
-
-    let addressArray = [];
-
-    // For each route, display summary information.
-    for (let i = 0; i < routes.legs.length; i++) {
-        let start_address = routes.legs[i].start_address;
-        let end_address = routes.legs[i].end_address;
-        let distance = routes.legs[i].distance.text;
-
-        addressArray.push({start_address: start_address, end_address: end_address, distance: distance});
-       
-    }
-
-	// console.log(addressArray);
-
-	// Add to Firebase
-	addToDatabase(addressArray);
-}
 
 
 

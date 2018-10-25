@@ -1,0 +1,41 @@
+#map {
+    width: 100%;
+}
+
+
+#right-panel {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    float: none;
+}
+
+
+/* #right-panel div { */
+    /* width: 30%; */
+ 
+/* } */
+
+#directions-panel {
+    width: 60%;
+    min-height: 400px;
+    height: unset;
+}
+
+#inner-right-panel{
+    width: 30%;
+    display: block;
+}
+
+#ulAddressList {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+
+#ulAddressList ul {
+    width: 25%;
+}

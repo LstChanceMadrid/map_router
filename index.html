@@ -19,7 +19,7 @@
 
         <link rel="stylesheet" media="screen and (max-width: 768px)" href="styles/mobile.css" />
 
-        <link rel="stylesheet" media="screen and (min-width: 769px)" href="styles/tablet.css" />
+        <link rel="stylesheet" media="screen and (min-width: 769px) and (max-width: 1199px)" href="styles/tablet.css" />
 
         <link rel="stylesheet" media="screen and (min-width: 1200px)" href="styles/desktop.css" />
     </head>
@@ -32,7 +32,7 @@
         <div id="map"></div>
 
         <div id="right-panel">
-            <div>
+            <div id="inner-right-panel">
                 <b>Start:</b><br />
 
                 <input type="text" id="start" class ="inputClassNew form-control" placeholder="Required" />
@@ -52,22 +52,23 @@
                 <input type="submit" class="sendSubmit" id="submit" value="SUBMIT" />
         
                 <button type="button" class="sendSubmit" id="btnSaveSearch">SAVE SEARCH</button>
-            </div><br />
-            
-            <b>Text Route:</b>
 
-            <div>
-                <input type="number" id="phoneNumber" class="phoneNumber" placeholder="Enter Phone Number" />
+                <div>
+                    <b>Text Route:</b>
+    
+                    <input type="number" id="phoneNumber" class="phoneNumber" placeholder="Enter Phone Number" />
+                    
+                    <input type="button" class="sendSubmit" id="btnSubmit" value="SEND" />
+                </div>
                 
-                <input type="button" class="sendSubmit" id="btnSubmit" value="SEND" />
-            </div>
+            </div><br />
 
             <div id="directions-panel"></div>
         </div>
 
-        <div id="directions-panel"></div>
+     
 
-        <div>
+        <div id="AddressListContainer">
             <div id="ulAddressList"></div>
         </div>
 
