@@ -1,9 +1,21 @@
-
+let deally = '{ "uid" : "' + decodeURI("https://map-router-e0727.firebaseio.com/users/quswYqbIuPWPGUxrwR4geKunYe83/locations".replace(/"/g, "").replace(/https:/g, "").replace(/\/\/map-router-e0727.firebaseio.com\/users\//g, "").replace(/\/locations/g, "") + '"}')
 // firebase
 
 let locationsRef;  // represents --> database.ref('users/' + userId + '/locations');
 
 const database = firebase.database();
+
+
+firebase.auth().onAuthStateChanged(function(users) {
+    if (users) {
+
+    } else {
+      // No user is signed in.
+    }
+  });
+
+
+
 
 // ---------------- register
 
@@ -95,23 +107,36 @@ loginButton.addEventListener('click', function() {
         
         loginEmailTextBox.value = "";
         loginPasswordTextBox.value = "";
-        // window.location.href = "../index.html";  // commented out for now b/c resets user info 
+        //window.location.href = "../index.html";  // commented out for now b/c resets user info 
         alert("you logged in.. congratulations to you. we're so proud you remembered your credentials and.. stuff.");
         console.log('login success');
         userId = firebase.auth().currentUser.uid;
-        locationsRef = database.ref('users/' + userId + '/locations');
-        let destinations = [];
+        locationsRef = database.ref('users/' + userId + '/locations/');localStorage.setItem("locationsRef", locationsRef);
 
-        // configureLocations(waypts); // Commented for now
+
 
         // Once user has logged in we now have locationsRef nodes for Firebase
         configureObservers()
 
-    });
+    })
+
+    .then(function(user) {
+        window.location.href = "../index.html"
+    })
+
 });
 
 // Add array of addresses to Firebase
 function addToDatabase(addressArray) {
+    items = localStorage.getItem("locationsRef");
+
+    deally = '{ "uid" : "' + decodeURI(items.replace(/"/g, "").replace(/https:/g, "").replace(/\/\/map-router-e0727.firebaseio.com\/users\//g, "").replace(/\/locations/g, "") + '"}')
+
+    let parsedDeally = JSON.parse(deally)
+
+    let theUser = parsedDeally.uid
+
+    locationsRef = firebase.database().ref('users/' + theUser + '/locations/')
 
     let refAddress = locationsRef.child("Addresses");
     refAddress.push(addressArray);
@@ -119,24 +144,9 @@ function addToDatabase(addressArray) {
 }
 
 
-/* Commented for now
-const configureLocations = (locationsRef) => {
-    locationsRef.on('value', (snapshot => {
-
-        waypnts = [];
-
-        snapshot.forEach(childSnapshot => {
-            stores.push(childSnapshot.val());
-        });
-        //--------------------------------whatever someone is doing to display stuff
-    }));
-}
-*/
-
-
 // Configure changes
 function configureObservers() {
-
+    
     let refAddress = locationsRef.child("Addresses");
 
     refAddress.on('value',function(snapshot){
@@ -195,9 +205,5 @@ function displayAddresses(addresses) {
 }
 
 
-
-
-
-
-
-
+JSON.parse('{ "uid : \"' + decodeURI("https://map-router-e0727.firebaseio.com/users/quswYqbIuPWPGUxrwR4geKunYe83/locations".replace(/"/g, "").replace(/https:/g, "").replace(/\/\/map-router-e0727.firebaseio.com\/users\//g, "").replace(/\/locations/g, "") + '"}'))
+// let deally = '{ "uid : " ' + decodeURI("https://map-router-e0727.firebaseio.com/users/quswYqbIuPWPGUxrwR4geKunYe83/locations".replace(/"/g, "").replace(/https:/g, "").replace(/\/\/map-router-e0727.firebaseio.com\/users\//g, "").replace(/\/locations/g, "") + '"}')
