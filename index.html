@@ -24,44 +24,13 @@
         <link rel="stylesheet" media="screen and (min-width: 1200px)" href="styles/desktop.css" />
     </head>
 
-    <body>
+    <body onload="initialize(),initializeNew()">  
         <header id="header">
             <h1 id="page-title">The Way Pointer</h1>
         </header>      
   
-        <div id="map"></div>
-
-
-        <div id="right-panel">
-            <div>
-                <b>Start:</b><br>
-
-                <input type="text" id="start" /><br />
-
-                <b>Enter Locations:</b><br />
-
-                <div id="divAddLocation">
-                    <input class ="inputClass" type="text" />
-                </div>
-
-                <br />
-
-                <b>End:</b><br />
-
-                <input type="text" id="end" /><br />
-            
-                <input type="submit" id="submit" />
-
-                <button type="button" id="btnSaveSearch">Save Search</button>
-            </div>
-
-            <div>
-                <p>
-                    <a id="mapLink" href="#" title="Open in Google Maps" target="_blank">Open in Google Maps</a>
-                </p>
-            </div>
         </header>
-    <body onload="initialize(),initializeNew()">        
+         
 
     <div id="map"></div>
     <div id="right-panel">
@@ -69,7 +38,7 @@
     <b>Start:</b><br>
     <input type="text" id="start" class ="inputClassNew form-control" placeholder="Required" >
     <br><br>
-    <b>Enter Locations</b> <br>
+    <b>Enter Locations:</b> <br>
     <div id="divAddLocation">
    <input class ="inputClass" type="text" placeholder="Press ENTER to add more" onfocusout="saveToArray()" >
    
@@ -78,9 +47,10 @@
 
    <input type="text" id="end" class ="inputClassNew" placeholder="Required" >
     <br>
-      <input type="submit" class="sendSubmit" id="submit">
+      <input type="submit" class="sendSubmit" id="submit" value="SUBMIT">
+      <button type="button" class="sendSubmit" id="btnSaveSearch">SAVE SEARCH</button>
     </div>
-    <br><b>Send Route to: </b>
+    <br><b>Text Route: </b>
     <div><input type="number" id="phoneNumber" class="phoneNumber" placeholder="Enter Phone Number"><input type="button" class="sendSubmit" id="btnSubmit" value="SEND"></div>
     <div id="directions-panel"></div>
     
