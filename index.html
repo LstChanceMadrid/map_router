@@ -8,8 +8,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <title>Map - Way Pointer</title>
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
@@ -26,29 +27,6 @@
         <header id="header">
             <h1 id="page-title">The Way Pointer</h1>
 
-            <!-- <button id="nav-button" onClick="showMenu">Register/Log In</button>
-        
-            <nav id="nav-container" class="nav-container">
-                <div class="nav-credential-container">
-                    <label class="nav-credential-label">Register:</label><br />
-
-                    <input id="register-email-text-box" class="nav-credential-text-box" type="email" placeholder="email@map.com" /><br />
-
-                    <input id="register-password-text-box" class="nav-credential-text-box" type="password" placeholder="Password" />
-
-                    <input id="register-button" type="button" value="Register" />
-                </div>
-        
-                <div class="nav-credential-container">
-                    <label class="nav-credential-label">Log In:</label><br />
-
-                    <input id="login-email-text-box" class="nav-credential-text-box" type="email" placeholder="email@map.com" /><br />
-
-                    <input id="login-password-text-box" class="nav-credential-text-box" type="password" placeholder="Password" />
-
-                    <input id="login-button" type="button" value="Log In" />
-                </div>
-            </nav> -->
         </header>      
   
         <div id="map"></div>
@@ -82,11 +60,36 @@
                     <a id="mapLink" href="#" title="Open in Google Maps" target="_blank">Open in Google Maps</a>
                 </p>
             </div>
+        </header>
+    <body onload="initialize(),initializeNew()">        
+
+    <div id="map"></div>
+    <div id="right-panel">
+    <div>
+    <b>Start:</b><br>
+    <input type="text" id="start" class ="inputClassNew form-control" placeholder="Required" >
+    <br><br>
+    <b>Enter Locations</b> <br>
+    <div id="divAddLocation">
+   <input class ="inputClass" type="text" placeholder="Press ENTER to add more" onfocusout="saveToArray()" >
+   
+    </div><br>
+    <b>End:</b> <br>
+
+   <input type="text" id="end" class ="inputClassNew" placeholder="Required" >
+    <br>
+      <input type="submit" class="sendSubmit" id="submit">
+    </div>
+    <br><b>Send Route to: </b>
+    <div><input type="number" id="phoneNumber" class="phoneNumber" placeholder="Enter Phone Number"><input type="button" class="sendSubmit" id="btnSubmit" value="SEND"></div>
+    <div id="directions-panel"></div>
+    
+    </div>
 
             <div id="directions-panel"></div>
 
             <div>
-                    <div id="ulAddressList"></div>
+                <div id="ulAddressList"></div>
             </div>
             
         </div>
@@ -114,12 +117,14 @@
         };
         firebase.initializeApp(config);
     </script>
+    
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdRb3J4l87tn39EKuRo0VjVlDFbPRAEu4&callback=initMap&libraries=places"></script>
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdRb3J4l87tn39EKuRo0VjVlDFbPRAEu4&callback=initMap"></script>
+    <script src="scripts/firebase.js" type="text/javascript"></script>
 
     <script src="scripts/map.js" type="text/javascript"></script>
 
-    <script src="scripts/firebase.js" type="text/javascript"></script>
+    <script src="scripts/sms.js"></script>
 
     <script src="scripts/app.js" type="text/javascript"></script>
 </html>
