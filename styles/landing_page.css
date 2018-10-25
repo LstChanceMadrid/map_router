@@ -21,7 +21,6 @@ body {
 }
 
 header {
-    background: rgba(0, 0, 0, 0.15);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -84,9 +83,7 @@ header {
                     margin-bottom: 0.5em;
                 }
 
-main {
-    background: rgba(0, 0, 0, 0.15);
-}
+main {}
 
     #product-slogan {
         text-align: center;
@@ -95,11 +92,14 @@ main {
         font-size: 3em;
     }
 
-
-
 footer {
     background: rgba(0, 0, 0, 0.15);
 }
 
 
-@media screen and (min-width: 769px) {}
+@media screen and (min-width: 769px) {
+
+    #product-slogan {
+        font-size: 5em;
+    }
+}
