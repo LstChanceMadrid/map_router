@@ -1,29 +1,37 @@
 
-
-
-#right-panel {
-  font-family: 'Roboto','sans-serif';
-  line-height: 30px;
-  padding-left: 10px;
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 #right-panel select, #right-panel input {
-  font-size: 15px;
+	font-size: 15px;
+}
+
+#right-panel {
+	font-family: 'Roboto','sans-serif';
+	line-height: 30px;
+	margin: 20px;
+	border-width: 2px;
+	width: 20%;
+	height: 400px;
+	float: left;
+	text-align: left;
+	padding-top: 0;
+	padding-left: 10px;
 }
 
 #right-panel select {
-  width: 100%;
+	width: 100%;
 }
 
 #right-panel i {
-  font-size: 12px;
+	font-size: 12px;
 }
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
+
 #map {
+<<<<<<< HEAD
   height: 100%;
   float: left;
   width: 70%;
@@ -37,8 +45,16 @@ html, body {
   float: left;
   text-align: left;
   padding-top: 0;
+=======
+	height: 100%;
+	float: left;
+	width: 70%;
+	height: 100%;
+>>>>>>> 47072b1b8d7cbfd5dad80fa212e0365ea777fced
 }
+
 #directions-panel {
+<<<<<<< HEAD
   margin-top: 20px;
   background-color: #FFEE77;
   padding: 10px;
@@ -120,4 +136,23 @@ div:empty{
   padding: 15px;
   background: rgba(255,255,255,0.5);
   margin: 0 0 10px 0;
+=======
+	margin-top: 10px;
+	background-color: #FFEE77;
+	padding: 10px;
+	overflow: scroll;
+	height: 174px;
+}
+
+#btnSaveSearch, #submit {
+	font-size: 15px;
+	border-radius: 5px;
+	padding: 2px 3px;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
+}
+
+
+#ulAddressList {
+	font-size: 0.75em;
+>>>>>>> 47072b1b8d7cbfd5dad80fa212e0365ea777fced
 }

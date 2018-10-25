@@ -1,0 +1,105 @@
+::placeholder {
+    color: rgb(255, 255, 255, 0.5);
+}
+
+body {
+    margin: auto;
+    max-width: 1920px;
+    padding: 1em;
+    background: black;   
+    color: white;
+}
+
+#background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    max-width: 100%;
+    max-height: 100%;
+    z-index: -1;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+    #product-title {
+        margin: 0;
+        padding: 0;
+    }
+
+    #nav-button {
+        font-size: 2em;
+    }
+
+    #nav-button:hover {
+        cursor: pointer;
+    }
+
+        #nav-menu {
+            position: absolute;
+            top: 3em;
+            right: 0;
+            background: rgba(0, 0, 0, 0.75);
+            border-radius: 10px;
+            
+        }
+
+            .credentials-container {
+                text-align: center;
+            }
+
+                .credentials-label {
+                    padding: 0.5em 0;
+                    background: rgba(0, 0, 0, 1);
+                }
+
+                .text-box {
+                    padding: 0.5em;
+                    margin: 0.5em;
+                    color: white;
+                    background: rgb(80, 80, 80);
+                    border-color: cornflowerblue;
+                }
+
+                    .text-box:hover {
+                        border-color: aqua;
+                    }
+
+                .submit-credentials-button {
+                    right: 0;
+                    background: none;
+                    border: none;
+                    color: white;
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+
+                #register-button {
+                    margin-bottom: 0.5em;
+                }
+
+main {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+    #product-slogan {
+        text-align: center;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: lighter;
+        font-size: 3em;
+    }
+
+
+
+footer {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+
+@media screen and (min-width: 769px) {}
