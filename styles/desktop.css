@@ -1,3 +1,14 @@
+html, body {
+	height: 100%;
+	margin: 0;
+  padding: 0;
+ background-color:#e4e9ed;
+}
+.logo{
+  
+  color: #24252a;
+}
+
 #right-panel select, #right-panel input {
 	font-size: 15px;
 }
@@ -5,18 +16,21 @@
 #right-panel {
 	font-family: 'Roboto','sans-serif';
 	line-height: 30px;
-	margin: 20px;
-	border-width: 2px;
+	margin-right: 60px;
+	border-width: 5px;
 	width: 20%;
 	float:right;
 	text-align: left;
-	padding-top: 0;
+	padding-top: 10px;
   padding-left: 10px;
+  border:3px solid whitesmoke;
+  height: 70%;
   
 }
 
 #right-panel select {
-	width: 100%;
+  width: 100%;
+  
 }
 
 #right-panel i {
@@ -26,21 +40,21 @@
 #map {
 
   float: left;
-  width: 75%;
+  width: 70%;
   height: 70%;
-  
+  border: 3px solid whitesmoke;
+  margin-left: 15px
 }
 
 
 #directions-panel {
-  margin-top: 20px;
-  background-color: #FFEE77;
+  margin-top: 100px;
+  background-color:#59abe3;
   padding: 10px;
   overflow: scroll;
   height: 400px;
+  float: left
 }
-
-
 
 
 div:empty{ 
@@ -154,3 +168,27 @@ div:empty{
   display: none
 }
   
+#header{ 
+  padding:20px;
+}
+.inputClassNew{ 
+  width: 18rem;
+}
+.inputClass{ 
+    width: 18rem;
+}
+
+
+
+
+h1 {
+    font: 600 1.5em/1 'Raleway', sans-serif;
+    color: rgba(0,0,0,.5);
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: .5em;
+    margin-left: 20px;
+}
+
+
+

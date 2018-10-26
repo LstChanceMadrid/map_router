@@ -1,41 +1,192 @@
-#map {
-    width: 100%;
+html, body {
+	height: 100%;
+	margin: 0;
+  padding: 0;
+ background-color:#e4e9ed;
+}
+.logo{
+  
+  color: #24252a;
 }
 
+#right-panel select, #right-panel input {
+	font-size: 15px;
+}
 
 #right-panel {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    float: none;
+	font-family: 'Roboto','sans-serif';
+	line-height: 30px;
+	margin-right: 60px;
+	border-width: 5px;
+	width: 20%;
+	float:right;
+	text-align: left;
+	padding-top: 10px;
+  padding-left: 10px;
+  border:3px solid whitesmoke;
+  height: 70%;
 }
 
+#right-panel select {
+  width: 100%;
+  
+}
 
-/* #right-panel div { */
-    /* width: 30%; */
- 
-/* } */
+#right-panel i {
+	font-size: 12px;
+}
+
+#map {
+
+  float: left;
+  width: 70%;
+  height: 70%;
+  border: 3px solid whitesmoke;
+  margin-left: 15px
+}
+
 
 #directions-panel {
-    width: 60%;
-    min-height: 400px;
-    height: unset;
+  margin-top: 20px;
+  background-color:#59abe3;
+  padding: 10px;
+  overflow: scroll;
+  height: 400px;
 }
 
-#inner-right-panel{
-    width: 30%;
-    display: block;
+
+div:empty{ 
+  display: none
 }
+
+#saveSearch, #submit {
+  font-size: 15px;
+  border-radius: 5px;
+  padding: 2px 3px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
+}
+.inputClass  {
+  border: 5px solid white; 
+  -webkit-box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1); 
+  -moz-box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1); 
+  box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1); 
+  padding: 15px;
+  background: rgba(255,255,255,0.5);
+  margin: 0 0 10px 0;
+}
+
+.inputClassNew{
+  border: 5px solid white; 
+  -webkit-box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1); 
+  -moz-box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1); 
+  box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1); 
+  padding: 15px;
+  background: rgba(255,255,255,0.5);
+  margin: 0 0 10px 0;
+
+}
+
+.phoneNumber{ 
+
+  border: 5px solid white; 
+  -webkit-box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1); 
+  -moz-box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1); 
+  box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1); 
+  padding: 15px;
+  background: rgba(255,255,255,0.5);
+  margin: 0 0 10px 0;
+}
+.sendSubmit{ 
+
+  border: 5px solid #bdc3c7; 
+  -webkit-box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1); 
+  -moz-box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1); 
+  box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1); 
+}
+
+#btnSaveSearch, #submit {
+	font-size: 15px;
+	border-radius: 5px;
+	padding: 2px 3px;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
+}
+
 
 #ulAddressList {
-    margin-top: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+  font-size: 0.75em;
+  clear: both;
+}
+#AddressListContainer{
+  margin: 20px;
+  background-color: lightblue;
+  padding: 10px;
+  width: 75%;
+  
+
+
+}
+#left-panel{
+	font-family: 'Roboto','sans-serif';
+	line-height: 30px;
+	margin: 20px;
+	border-width: 2px;
+	width: 20%;
+	text-align: left;
+	padding-top: 0;
+  padding-left: 10px;
+  height: 70%;
+  width: 70%;
+}
+
+div:empty{ 
+  display: none
+}
+  
+#header{ 
+  padding:20px;
+}
+.inputClassNew{ 
+  width: 300px;
+}
+.inputClass{ 
+    width: 300px;
 }
 
 
 
-#ulAddressList ul {
-    width: 25%;
+
+h1 {
+    font: 600 1.5em/1 'Raleway', sans-serif;
+    color: rgba(0,0,0,.5);
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: .5em;
+    margin-left: 20px;
 }
+
+
+
