@@ -17,10 +17,9 @@ header {
     #header {}
 
         #page-title {
-            padding: 0.25em 0;
+            padding: 0 0 0.25em 0;
             margin: 0;
         }
-
 
 #map {
     height: 320px;
@@ -120,7 +119,6 @@ header {
         width: 80%;
         margin: auto;
     }
-
 
         #ulAddressList ul {
             width: 100%;
