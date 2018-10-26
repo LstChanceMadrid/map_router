@@ -59,8 +59,9 @@ btnSaveSearch.disabled = true;
       		//   for(let i = 0; i < input_class.length; i++){
       		//     let new_location = input_class[i].value
       		//   waypts.push({location: new_location, stopover:true})
-      		//   }
-        	let newInputBox = document.createElement("input")
+          //   }
+
+          let newInputBox = document.createElement("input")
         	newInputBox.type ="text"
         	newInputBox.className = "inputClass"
         	newInputBox.placeholder="Press ENTER to add"
@@ -178,7 +179,7 @@ function addAddresses(routes){
                 '</b><br>';
             summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
             summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
-            summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
+            summaryPanel.innerHTML += route.legs[i].distance.text + '<br><hr>';
           }
       // If status is good enable option to save to database
       storeCurrentRoutes = route // store current route
