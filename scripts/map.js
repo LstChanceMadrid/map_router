@@ -21,50 +21,50 @@ btnSaveSearch.disabled = true;
       
       navigator.geolocation.getCurrentPosition(function(response) {
         let mapOptions = {
-          center: new google.maps.LatLng(response.coords.latitude, response.coords.longitude),
-          zoom: 10,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
+        	center: new google.maps.LatLng(response.coords.latitude, response.coords.longitude),
+        	zoom: 10,
+        	mapTypeId: google.maps.MapTypeId.ROADMAP
         }
       
-      map = new google.maps.Map(document.getElementById('map'), mapOptions) 
+    	map = new google.maps.Map(document.getElementById('map'), mapOptions) 
     
-      directionsDisplay.setMap(map);
+    	directionsDisplay.setMap(map);
     
     })
     geocoder = new google.maps.Geocoder();
     
     }
     document.getElementById('submit').addEventListener('click',  function() {
-      saveToArray()
-      calculateAndDisplayRoute(directionsService, directionsDisplay)
+    	saveToArray()
+    	calculateAndDisplayRoute(directionsService, directionsDisplay)
     })
     
     input_class = document.getElementsByClassName("inputClass")
     let input_location = document.getElementById("inputLocation")
-      let div_locations = document.getElementById("divAddLocation")
-      let addLocation = document.getElementById("addLocation")
+    let div_locations = document.getElementById("divAddLocation")
+    let addLocation = document.getElementById("addLocation")
 
     div_locations.addEventListener('keyup',function(e){
       
-      // waypts = [];
-      if (e.keyCode === 13){
-      //   for(let i = 0; i < input_class.length; i++){
-      //     let new_location = input_class[i].value
-      //   waypts.push({location: new_location, stopover:true})
-      //   }
-        let newInputBox = document.createElement("input")
-        newInputBox.type ="text"
-        newInputBox.className = "inputClass"
-        newInputBox.placeholder="Press ENTER to add"
-        newInputBox.onfocusout= saveToArray()
+    	// waypts = [];
+      	if (e.keyCode === 13){
+      		//   for(let i = 0; i < input_class.length; i++){
+      		//     let new_location = input_class[i].value
+      		//   waypts.push({location: new_location, stopover:true})
+      		//   }
+        	let newInputBox = document.createElement("input")
+        	newInputBox.type ="text"
+        	newInputBox.className = "inputClass"
+        	newInputBox.placeholder="Press ENTER to add"
+        	newInputBox.onfocusout= saveToArray()
       
         
-        div_locations.appendChild(newInputBox)
-        newInputBox.focus()
-        locInput = document.getElementsByClassName("inputClass")
-      initialize()
+        	div_locations.appendChild(newInputBox)
+        	newInputBox.focus()
+        	locInput = document.getElementsByClassName("inputClass")
+      	initialize()
       
-      }
+      	}
     })
     //onfocusout autosave to waypts array 
       function saveToArray(){
@@ -88,15 +88,15 @@ btnSaveSearch.disabled = true;
 
 // User option to save route
 btnSaveSearch.addEventListener('click', function() {
-	addAddresses(storeCurrentRoutes);
-	btnSaveSearch.disabled = true;
+  addAddresses(storeCurrentRoutes);
+  btnSaveSearch.disabled = true;
 });
 
 
 // Capture data if status from calculateAndDisplayRoute() good
 function addAddresses(routes){
   
-	// console.log(routes)
+  // console.log(routes)
 
     let addressArray = [];
 
@@ -110,10 +110,10 @@ function addAddresses(routes){
        
     }
 
-	// console.log(addressArray);
+  // console.log(addressArray);
 
-	// Add to Firebase
-	addToDatabase(addressArray);
+  // Add to Firebase
+  addToDatabase(addressArray);
 }
 
 
@@ -173,9 +173,9 @@ function addAddresses(routes){
             summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
           }
       // If status is good enable option to save to database
-			storeCurrentRoutes = route // store current route
-			document.getElementById("btnSaveSearch").disabled = false;
-			// addAddresses(route);
+      storeCurrentRoutes = route // store current route
+      document.getElementById("btnSaveSearch").disabled = false;
+      // addAddresses(route);
         } else {
           window.alert('Directions request failed due to ' + status);
         }
