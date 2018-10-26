@@ -25,7 +25,7 @@
                     alert("Invalid number try again");
                 }
             });
-            phone.value == ""
+           
         });
         
     });
