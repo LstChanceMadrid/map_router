@@ -9,7 +9,8 @@ let directionsDisplay
 let res
 let locInput
 let input_class
-let storeCurrentRoutes;
+let storeCurrentRoutes
+let positionLoc
 
 // Initialized button as disabled until button submit search route clicked and validated
 let btnSaveSearch = document.getElementById("btnSaveSearch");
@@ -20,18 +21,25 @@ btnSaveSearch.disabled = true;
       directionsDisplay = new google.maps.DirectionsRenderer;
       
       navigator.geolocation.getCurrentPosition(function(response) {
-        let mapOptions = {
-        	center: new google.maps.LatLng(response.coords.latitude, response.coords.longitude),
-        	zoom: 10,
-        	mapTypeId: google.maps.MapTypeId.ROADMAP
+          positionLoc = new google.maps.LatLng(response.coords.latitude, response.coords.longitude)
+          mapOptions = {
+          center: new google.maps.LatLng(response.coords.latitude, response.coords.longitude),
+          zoom: 12,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
         }
       
-    	map = new google.maps.Map(document.getElementById('map'), mapOptions) 
-    
-    	directionsDisplay.setMap(map);
+      map = new google.maps.Map(document.getElementById('map'), mapOptions) 
+          let userMarker = new google.maps.Marker({
+            position: positionLoc,
+            map: map,
+            icon: 'images/mario_icon.png'
+          })
+          let trafficLayer = new google.maps.TrafficLayer();
+          trafficLayer.setMap(map);
+          directionsDisplay.setMap(map);
     
     })
-    geocoder = new google.maps.Geocoder();
+   
     
     }
     document.getElementById('submit').addEventListener('click',  function() {
