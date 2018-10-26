@@ -38,7 +38,6 @@ html, body {
 }
 
 #map {
-
   float: left;
   width: 70%;
   height: 70%;
@@ -142,6 +141,7 @@ div:empty{
   font-size: 0.75em;
   clear: both;
 }
+
 #AddressListContainer{
   margin: 20px;
   background-color: lightblue;
