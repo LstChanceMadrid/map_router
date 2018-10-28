@@ -3,6 +3,8 @@
 
 <html>
     <head>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
         <meta charset="utf-8" />
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,7 +15,7 @@
         
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
         <link rel="stylesheet" href="styles/app.css" />
 
@@ -26,17 +28,16 @@
 
     <body onload="initialize(),initializeNew()">  
         <header id="header">
-                <h1 id="page-title">WayPointer</h1> <!-- added the id for the mobile version -->
-            <!-- <h1 id="page-title" class="logo">The Way Pointer</h1> -->
+            <h1 id="page-title">The Way Pointer</h1>
         </header>      
          
-        <div id="map" ></div>
+        <div id="map"></div>
 
-        <div id="right-panel" class="d-inline p-2  text-white">
+        <div id="right-panel">
             <div id="inner-right-panel">
                 <b>Start:</b><br />
 
-                <input type="text" id="start" class ="inputClassNew" placeholder="Required" />
+                <input type="text" id="start" class ="inputClassNew form-control" placeholder="Required" />
 
                 <br /><br />
 
@@ -52,24 +53,24 @@
 
                 <input type="submit" class="sendSubmit" id="submit" value="SUBMIT" />
         
-                <button type="button" class="sendSubmit" id="btnSaveSearch">SAVE ROUTE</button>
+                <button type="button" class="sendSubmit" id="btnSaveSearch">SAVE SEARCH</button>
 
-                <div><br> <br>
+                <div>
                     <b>Text Route:</b>
-                     <br> 
+    
                     <input type="number" id="phoneNumber" class="phoneNumber" placeholder="Enter Phone Number" />
                     
                     <input type="button" class="sendSubmit" id="btnSubmit" value="SEND" />
                 </div>   
             </div><br />
 
-            <div id="directions-panel" ></div>
+            <div id="directions-panel"></div>
         </div>
-        <!-- <div id="left-panel">
+
         <div id="AddressListContainer">
             <div id="ulAddressList"></div>
-        </div> -->
-</div>
+        </div>
+
         <footer>
 
         </footer>
