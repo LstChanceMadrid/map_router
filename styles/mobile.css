@@ -5,6 +5,10 @@ body {
     color: white;
 }
 
+hr {
+    border-color: gray;
+}
+
 header {
     background: black;
     color: white;
@@ -71,16 +75,19 @@ header {
 
         .sendSubmit {
             margin: 1em auto;
+            transition: 500ms;
         }
 
             .sendSubmit:hover {
-                background: white;
+                background: black;
+                color: white;
             }
 
         #btnSaveSearch {}
 
             #submit:hover {
                 background: black;
+                color: white;
             } 
 
         #phoneNumber {}
