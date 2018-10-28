@@ -18,7 +18,7 @@ header {
     justify-content: center;
 }
 
-    #header {}
+    /* #header {} */
 
         #page-title {
             padding: 0 0 0.25em 0;
@@ -57,7 +57,7 @@ header {
             border: 2px solid rgba(0, 0, 0, 0.5);
         }
 
-        .form-control {}
+        /* .form-control {} */
 
         #divAddLocation {
             display:block;
@@ -71,7 +71,7 @@ header {
                 border: 2px solid rgba(0, 0, 0, 0.5);
             }
 
-        #submit {}
+        /* #submit {} */
 
         .sendSubmit {
             margin: 1em auto;
@@ -83,18 +83,18 @@ header {
                 color: white;
             }
 
-        #btnSaveSearch {}
+        /* #btnSaveSearch {} */
 
             #submit:hover {
                 background: black;
                 color: white;
             } 
 
-        #phoneNumber {}
+        /* #phoneNumber {} */
 
-        .phoneNumber {}
+        /* .phoneNumber {} */
 
-        #btnSubmit {}
+        /* #btnSubmit {} */
 
             #btnSubmit:hover {
                 background: black;
@@ -113,7 +113,7 @@ header {
             display: none;
         }
         
-#left-panel {}
+/* #left-panel {} */
 
 #AddressListContainer {
     position: relative;
