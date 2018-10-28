@@ -7,7 +7,6 @@ let waypts
 let directionsService
 let directionsDisplay
 let res
-let locInput
 let input_class
 let storeCurrentRoutes
 let positionLoc
@@ -19,6 +18,7 @@ btnSaveSearch.disabled = true;
     function initMap() {
       directionsService = new google.maps.DirectionsService;
       directionsDisplay = new google.maps.DirectionsRenderer;
+      geocoder = new google.maps.Geocoder();
       
       navigator.geolocation.getCurrentPosition(function(response) {
           positionLoc = new google.maps.LatLng(response.coords.latitude, response.coords.longitude)
@@ -44,9 +44,12 @@ btnSaveSearch.disabled = true;
     }
     document.getElementById('submit').addEventListener('click',  function() {
     	saveToArray()
-    	calculateAndDisplayRoute(directionsService, directionsDisplay)
+      calculateAndDisplayRoute(directionsService, directionsDisplay)
+     
     })
     
+    
+
     input_class = document.getElementsByClassName("inputClass")
     let input_location = document.getElementById("inputLocation")
     let div_locations = document.getElementById("divAddLocation")
@@ -64,13 +67,14 @@ btnSaveSearch.disabled = true;
           let newInputBox = document.createElement("input")
         	newInputBox.type ="text"
         	newInputBox.className = "inputClass"
-        	newInputBox.placeholder="Press ENTER to add"
+          newInputBox.placeholder="Press ENTER to add"
+          newInputBox.onfocus = initialize()
         	newInputBox.onfocusout= saveToArray()
       
         
         	div_locations.appendChild(newInputBox)
         	newInputBox.focus()
-        	locInput = document.getElementsByClassName("inputClass")
+        
       	initialize()
       
       	}
@@ -87,12 +91,6 @@ btnSaveSearch.disabled = true;
       }
       console.log(waypts)
     }
-
-
-
-
-
-
 
 
 // User option to save route
@@ -119,44 +117,15 @@ function addAddresses(routes){
        
     }
 
-  // console.log(addressArray);
 
-  // Add to Firebase
   addToDatabase(addressArray);
 }
 
-
-
-
-
-
-
-
-
-
-
-    // autocomplete for all extra locations input
-    function initialize(){ 
-      locInput = document.getElementsByClassName("inputClass")
-      for(let i = 0; i<locInput.length;i++){
-        new google.maps.places.Autocomplete(locInput[i])   
-    }
-  }
-    google.maps.event.addDomListener(window, 'load', initialize);
-  // autocomplete for start and end input boxes
-    function initializeNew(){ 
-      locInputNew = document.getElementsByClassName("inputClassNew")
-        for(let i = 0; i<locInputNew.length;i++){
-          new google.maps.places.Autocomplete(locInputNew[i])
-    }
-      
-  }
-    google.maps.event.addDomListener(window, 'load', initializeNew);
     
   // calcuates routes 
     function calculateAndDisplayRoute(directionsService, directionsDisplay) {
       origin = document.getElementById('start').value
-      destination= document.getElementById('end').value,
+      destination= document.getElementById('end').value
       directionsService.route({
         origin: document.getElementById('start').value,
         destination: document.getElementById('end').value,
@@ -169,7 +138,6 @@ function addAddresses(routes){
           let route = response.routes[0];
           // creates link to send 
           console.log(response)
-          prepareMapLink(response)
           let summaryPanel = document.getElementById('directions-panel');
           summaryPanel.innerHTML = '';
           // For each route, display summary information.
@@ -188,6 +156,7 @@ function addAddresses(routes){
         } else {
           window.alert('Directions request failed due to ' + status);
         }
+        prepareMapLink(response)
       });
     }
 
@@ -253,12 +222,28 @@ function addAddresses(routes){
         let waypointsIds = waypoints.join('|');
       
         res += "&waypoints="+waypointsStr+"&waypoint_place_ids="+waypointsIds+"&travelmode=driving";
-      
         console.log(res)
+        
     }
 
-  
 
+    // initialize autocomplete 
+      function initialize(){ 
+        let locInput = document.getElementsByClassName("inputClass")
+        for(let i = 0; i<locInput.length;i++){
+          new google.maps.places.Autocomplete(locInput[i])   
+      }
+    }
+      
+      function initializeNew(){ 
+        let locInputNew = document.getElementsByClassName("inputClassNew")
+          for(let i = 0; i<locInputNew.length;i++){
+            new google.maps.places.Autocomplete(locInputNew[i])
+      }
+        
+    }
+   
+  
 
 
 

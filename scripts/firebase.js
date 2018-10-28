@@ -1,21 +1,18 @@
 
 // firebase
-
+let theUser
 let locationsRef;  // represents --> database.ref('users/' + userId + '/locations');
 
 const database = firebase.database();
 
 
-firebase.auth().onAuthStateChanged(function(users) {
-    if (users) {
-
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        theUser = user.uid
     } else {
       // No user is signed in.
     }
 });
-
-
-
 
 // ---------------- register
 
@@ -132,12 +129,13 @@ loginButton.addEventListener('click', function() {
 // Add array of addresses to Firebase
 function addToDatabase(addressArray) {
     items = localStorage.getItem("locationsRef");
+     
+   
+    // let deally = '{ "uid" : "' + decodeURI(items.replace(/"/g, "").replace(/https:/g, "").replace(/\/\/map-router-e0727.firebaseio.com\/users\//g, "").replace(/\/locations/g, "") + '"}')
 
-    let deally = '{ "uid" : "' + decodeURI(items.replace(/"/g, "").replace(/https:/g, "").replace(/\/\/map-router-e0727.firebaseio.com\/users\//g, "").replace(/\/locations/g, "") + '"}')
+    // let parsedDeally = JSON.parse(deally)
 
-    let parsedDeally = JSON.parse(deally)
-
-    let theUser = parsedDeally.uid
+    // let theUser = parsedDeally.uid
 
     locationsRef = firebase.database().ref('users/' + theUser + '/locations/')
 

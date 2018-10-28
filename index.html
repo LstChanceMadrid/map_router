@@ -19,12 +19,12 @@
 
         <link rel="stylesheet" media="screen and (max-width: 768px)" href="styles/mobile.css" />
 
-        <link rel="stylesheet" media="screen and (min-width: 769px) and (max-width: 1199px)" href="styles/tablet.css" />
+        <link rel="stylesheet" media="screen and (min-width: 769px) and (max-width: 1069px)" href="styles/tablet.css" />
 
-        <link rel="stylesheet" media="screen and (min-width: 1200px)" href="styles/desktop.css" />
+        <link rel="stylesheet" media="screen and (min-width: 1070px)" href="styles/desktop.css" />
     </head>
 
-    <body onload="initialize(),initializeNew()">  
+    <body>  
         <header id="header">
                 <h1>WayPointer</h1>
             <!-- <h1 id="page-title" class="logo">The Way Pointer</h1> -->
@@ -32,23 +32,23 @@
          
         <div id="map" ></div>
 
-        <div id="right-panel" class="d-inline p-2  text-white">
+        <div id="right-panel" class="p-2 text-white">
             <div id="inner-right-panel">
                 <b>Start:</b><br />
 
-                <input type="text" id="start" class ="inputClassNew" placeholder="Required" />
+                <input type="text" id="start" class ="inputClassNew" placeholder="Required" onfocus="initializeNew()" />
 
                 <br /><br />
 
                 <b>Enter Locations:</b><br />
 
                 <div id="divAddLocation">
-                    <input class ="inputClass" type="text" placeholder="Press ENTER to add more" onfocusout="saveToArray()" />
+                    <input class ="inputClass " type="text" placeholder="Press ENTER to add more" onfocusout="saveToArray()" onfocus="initialize()" />
                 </div><br />
         
                 <b>End:</b><br />
 
-                <input type="text" id="end" class ="inputClassNew" placeholder="Required" /><br />
+                <input type="text" id="end" class ="inputClassNew " placeholder="Required" /><br />
 
                 <input type="submit" class="sendSubmit" id="submit" value="SUBMIT" />
         
@@ -57,7 +57,7 @@
                 <div><br> <br>
                     <b>Text Route:</b>
                      <br> 
-                    <input type="number" id="phoneNumber" class="phoneNumber" placeholder="Enter Phone Number" />
+                    <input type="number" id="phoneNumber" class="phoneNumber" placeholder="Enter Phone Number"/>
                     
                     <input type="button" class="sendSubmit" id="btnSubmit" value="SEND" />
                 </div>   
