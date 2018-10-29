@@ -110,7 +110,7 @@ loginButton.addEventListener('click', function() {
         
             loginEmailTextBox.value = "";
             loginPasswordTextBox.value = "";
-            alert("you logged in.. congratulations to you. we're so proud you remembered your credentials and.. stuff.");
+            alert("you logged in");
             console.log('login success');
 
             userId = firebase.auth().currentUser.uid;
